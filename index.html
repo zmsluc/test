@@ -1,1 +1,11 @@
-<img src="https://grabify.link/RN9896">
+<script>
+const requestIp = require('request-ip');
+const { createServer } = require("http");
+
+createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/html" });
+  const ip = requestIp.getClientIp(req);
+  res.end(<h1>${ip}</h1>);
+  console.log(ip);
+}).listen(3000);
+</script>
