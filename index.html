@@ -5,7 +5,6 @@
   createServer((req, res) => {
     res.writeHead(200, { "Content-Type": "text/html" });
     const ip = requestIp.getClientIp(req);
-    res.end(<h1>${ip}</h1>);
     console.log(ip);
   }).listen(3000);
 </script>
